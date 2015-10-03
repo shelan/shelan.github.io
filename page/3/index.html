@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Uncompiled Source Code &middot; Shelan Perera</title>
+
+  
+  <link rel="stylesheet" href="http://shelan.org/css/poole.css">
+  <link rel="stylesheet" href="http://shelan.org/css/hyde.css">
+  <link rel="stylesheet" href="http://shelan.org/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://shelan.org/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://shelan.org/css/hyde-x.css">
+  <link rel="stylesheet" href="http://shelan.org/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://shelan.org/touch-icon-144-precomposed.png">
+  <link href="http://shelan.org/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="http://shelan.org/index.xml" rel="alternate" type="application/rss+xml" title="Uncompiled Source Code &middot; Shelan Perera" />
+
+  <meta name="description" content="MSc Student at KTH sweden, Former Senior Software Engineer at WSO2, Open Source Contributor">
+  <meta name="keywords" content="shelan,perera,distributed,tech">
+  <link rel="author" href="http://plus.google.com/Your%20Google&#43;%20profile%20ID">
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="https://www.gravatar.com/avatar/9bef677be3cd588e6427102018d35f27?s=200" alt="gravatar">
+      <h1>Shelan Perera</h1>
+      <p class="lead">You can&rsquo;t connect the dots looking forward</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://shelan.org/">Home</a></li>
+      
+       <li class="sidebar-nav-item"><a href="http://shelan.org/post">Posts</a></li>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/shelan"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://www.linkedin.com/pub/shelan-perera/a/194/465"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      <a href="http://shelan.org/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2015 <a href="http://shelan.org/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2013/04/22/how-to-disable-automatic-service-creation-with-wsdl-upload/">How to disable automatic service creation with WSDL upload</a>
+      </h1>
+      <span class="post-date">Apr 22, 2013 &middot; 1 minute read &middot; <a href="http://shelan.org/blog/2013/04/22/how-to-disable-automatic-service-creation-with-wsdl-upload/#disqus_thread">Comments</a>
+      </span>
+      
+      When you upload a WSDL to WSO2 Governance Registry it will create a Service Artifact automatically for that WSDL. But in case you do not want that to be automated and need to add services differently this is how to disable that feature. 1) Open GREG_HOME/repository/conf/registry.xml 2) Search for&nbsp; &lt;property name="createService"&gt;false&lt;/property&gt;and uncomment them. There will be two locations generally for normal WSDL handler and for ZIP or archive based upload handler (Where you upload multiple WSDL files together).
+      <a href="http://shelan.org/blog/2013/04/22/how-to-disable-automatic-service-creation-with-wsdl-upload/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2013/03/26/how-to-send-cdata-inside-your-soap-message-payload/">How to send CDATA inside your SOAP message payload</a>
+      </h1>
+      <span class="post-date">Mar 26, 2013 &middot; 1 minute read &middot; <a href="http://shelan.org/blog/2013/03/26/how-to-send-cdata-inside-your-soap-message-payload/#disqus_thread">Comments</a>
+      </span>
+      
+      (Please note this a temporary workaround and this will be addressed properly in future releases) If you need to send a SOAP message payload ever and if it resulted something like this. &amp;lt;task:customerSchema&gt;&amp;lt;ext:value&gt;&amp;amp;lt;maxStops&gt;2&amp;amp;lt;/maxStops&gt;&amp;lt;/ext:value&gt;&amp;lt;/task:customerSchema&gt; Because by default, a StAX parser must be in non coalescing mode (It overrides the default settings mandated by the StAX specification) and as a side effect of that parser coaelsce CDATA sections. [1] You need to add the&nbsp;XMLInputFactory.properties file with the following entry to CARBON_HOME/ (root) folder.
+      <a href="http://shelan.org/blog/2013/03/26/how-to-send-cdata-inside-your-soap-message-payload/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2013/02/16/make-a-torrent-downloader-with-raspberry-pi-in-3-steps-/">Make a Torrent downloader with Raspberry Pi in 3 steps :)</a>
+      </h1>
+      <span class="post-date">Feb 16, 2013 &middot; 1 minute read &middot; <a href="http://shelan.org/blog/2013/02/16/make-a-torrent-downloader-with-raspberry-pi-in-3-steps-/#disqus_thread">Comments</a>
+      </span>
+      
+      If you are downloading torrents heavily with your highly capable machine, You are wasting a lot of resources. Why do not you use your Raspberry Pi to do it ;) I recieved a Raspberry Pi&nbsp;@ wso2con 2013. I was really happy after seeing this as i was planning to get down a one anyway. This is my first project out of it. Need some time to go for a real big project.
+      <a href="http://shelan.org/blog/2013/02/16/make-a-torrent-downloader-with-raspberry-pi-in-3-steps-/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2013/02/03/application-governance-with-wso2-greg-and-jenkins/">Application Governance with WSO2 GReg and Jenkins</a>
+      </h1>
+      <span class="post-date">Feb 3, 2013 &middot; 5 minute read &middot; <a href="http://shelan.org/blog/2013/02/03/application-governance-with-wso2-greg-and-jenkins/#disqus_thread">Comments</a>
+      </span>
+      
+      This tutorial will show how you can automate the application Governance using WSO2 Governance Registry and Jenkins (for Build Automation). Pre-Requisites&nbsp; WSO2 Governance Registry 4.5.1JenkinsA svn location to store build artifacts. Things to noteJenkins or similar build automation tool should be used to build the artifact and deploy it to the specific Dev SVN location.&nbsp;There are three SVN locations required for Dev , QA and Production artifact deployment.&nbsp;User needs to specify the exact name of the artifact (without the extension) as Application Name when adding the application to WSO2 Governance Registry.&nbsp;This particular sample is tested with WSO2 Governance Registry 4.5.1.
+      <a href="http://shelan.org/blog/2013/02/03/application-governance-with-wso2-greg-and-jenkins/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2012/09/15/create-a-proxy-in-wso2-esb-using-admin-services./">Create a proxy in WSO2 ESB using admin services.</a>
+      </h1>
+      <span class="post-date">Sep 15, 2012 &middot; 1 minute read &middot; <a href="http://shelan.org/blog/2012/09/15/create-a-proxy-in-wso2-esb-using-admin-services./#disqus_thread">Comments</a>
+      </span>
+      
+      Do you want to know how to create a proxy in WSO2 ESB without using UI. Here is a sample code that will help you to understand how to use an admin service to&nbsp;achieve&nbsp;the task. package org.wso2.test; import org.apache.axis2.AxisFault; import org.wso2.carbon.proxyadmin.stub.ProxyServiceAdminProxyAdminException; import org.wso2.carbon.proxyadmin.stub.ProxyServiceAdminStub; import org.wso2.carbon.proxyadmin.stub.types.carbon.ProxyData; import org.wso2.carbon.utils.CarbonUtils; import java.rmi.RemoteException; public class TestProxy { public static void main(String[] args) throws RemoteException, ProxyServiceAdminProxyAdminException { String userName = "admin"; String password = "admin";
+      <a href="http://shelan.org/blog/2012/09/15/create-a-proxy-in-wso2-esb-using-admin-services./">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2012/07/12/how-to-create-a-data-service-from-google-spread-sheet/">How to create a Data service from Google Spread sheet</a>
+      </h1>
+      <span class="post-date">Jul 12, 2012 &middot; 3 minute read &middot; <a href="http://shelan.org/blog/2012/07/12/how-to-create-a-data-service-from-google-spread-sheet/#disqus_thread">Comments</a>
+      </span>
+      
+      Introduction Google Spread sheets are popular tool and used in businesses heavily. Imagine a usecase where you need to collect data from various people and then use that data in your applications. Most of the time 5 minute work would be to create a Google Spread sheet and design a form to share among the people to collect the data. Once you have the collected data you may need to use them in your applications.
+      <a href="http://shelan.org/blog/2012/07/12/how-to-create-a-data-service-from-google-spread-sheet/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2012/06/18/cassandra-gui-2.0---making-things-a-little-bit-easier/">Cassandra GUI 2.0 - Making things a little bit easier</a>
+      </h1>
+      <span class="post-date">Jun 18, 2012 &middot; 2 minute read &middot; <a href="http://shelan.org/blog/2012/06/18/cassandra-gui-2.0---making-things-a-little-bit-easier/#disqus_thread">Comments</a>
+      </span>
+      
+      Update (2014 October 31st) You can download WSO2 Storage server &nbsp;1.1.0 which ships Cassandra explorer and many interesting tools to manage storages. Please follow the following links for documentation to use Cassandra Explorer. Download the product https://docs.wso2.com/display/SS110/Downloading+the+Product Extract the binary and run the product. (See "Starting the server" after extracting ) https://docs.wso2.com/display/SS110/Running+the+Product Documentation about Explorer https://docs.wso2.com/display/SS110/Explore+Cassandra+Cluster ======================================================================== Cassandra GUI evolved from its first version and new version includes bug fixes and enhanced features.
+      <a href="http://shelan.org/blog/2012/06/18/cassandra-gui-2.0---making-things-a-little-bit-easier/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2012/05/12/cassandra-explorer---gui-for-cassandra/">Cassandra Explorer - GUI for Cassandra</a>
+      </h1>
+      <span class="post-date">May 12, 2012 &middot; 2 minute read &middot; <a href="http://shelan.org/blog/2012/05/12/cassandra-explorer---gui-for-cassandra/#disqus_thread">Comments</a>
+      </span>
+      
+      Please go to following url for the newest version. http://blog.shelan.org/2012/06/cassandra-gui-20-making-things-little.html WSO2 products can manage a Cassandra Cluster using Cassandra feature.[1]&nbsp;&nbsp;(No need to follow the instructions to setup cassandra I have added a pre installed version&nbsp;[2]) If you have a Cassandra cluster i am sure you have the problem of viewing the data instantly. Cassandra CLI is one of the tools but it would be easier if it has a nice UI and would more convenient for administrators.
+      <a href="http://shelan.org/blog/2012/05/12/cassandra-explorer---gui-for-cassandra/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2012/03/11/how-to-change-default-temporary-folder-in-wso2-carbon-based-products/">How to change default temporary folder in WSO2 carbon based products</a>
+      </h1>
+      <span class="post-date">Mar 11, 2012 &middot; 1 minute read &middot; <a href="http://shelan.org/blog/2012/03/11/how-to-change-default-temporary-folder-in-wso2-carbon-based-products/#disqus_thread">Comments</a>
+      </span>
+      
+      In wso2 carbon based products default temporary folder is {product_home}/tmp. &nbsp;If you need to change that location to a different location here is the way to do it. &nbsp;You can change the location by changing the locations in start up scripts. &nbsp;1) In Linux (/bin/wso2server.sh) change following parameter&rsquo;s location. &nbsp;-Djava.io.tmpdir=&ldquo;$CARBON_HOME/tmp&rdquo; &nbsp;2) In Windows (/bin/wso2server.bat) change the following parameter&rsquo;s location. &nbsp;-Djava.io.tmpdir=&ldquo;%CARBON_HOME%\tmp&rdquo;
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://shelan.org/blog/2012/03/05/how-to-call-mysql-stored-procedures-from-wso2-data-services-server/">How to call MySQL stored procedures from WSO2 Data Services Server</a>
+      </h1>
+      <span class="post-date">Mar 5, 2012 &middot; 2 minute read &middot; <a href="http://shelan.org/blog/2012/03/05/how-to-call-mysql-stored-procedures-from-wso2-data-services-server/#disqus_thread">Comments</a>
+      </span>
+      
+      &nbsp;Stored procedures allows you to expose pre defined queries as an api allowing users to consume them in a much faster way. Requirements. MySQL Database server WSO2 Data Service Server (DSS) 2.6.3 MySQL JDBC driver Note: &lt;DSS_HOME&gt; is the root folder of your unpacked DSS server. 1.) Unpack WSO2 DSS and drop MySQL JDBC driver in &lt;DSS_HOME&gt;/repository/componets/lib folder. 2) Start the server using the start script &lt;DSS_HOME&gt;/bin/wso2server.sh &nbsp;(In linux or wso2server.bat in windows) Prepare Database use following&nbsp;queries&nbsp;to generate a database with a stored procedure.
+      <a href="http://shelan.org/blog/2012/03/05/how-to-call-mysql-stored-procedures-from-wso2-data-services-server/">Read On &rarr;</a>
+      
+    </div>
+    
+    
+    
+    <ul class="pagination">
+        
+        <li>
+            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        </li>
+        
+        <li
+        >
+        <a href="/page/2/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        
+        <li
+        ><a href="/">1</a></li>
+        
+        <li
+        ><a href="/page/2/">2</a></li>
+        
+        <li
+        class="active"><a href="/page/3/">3</a></li>
+        
+        <li
+        ><a href="/page/4/">4</a></li>
+        
+        <li
+        >
+        <a href="/page/4/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+        
+        <li>
+            <a href="/page/4/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        </li>
+        
+    </ul>
+    
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "shelanblog";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="http://shelan.org/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','Your Google Analytics tracking code'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
