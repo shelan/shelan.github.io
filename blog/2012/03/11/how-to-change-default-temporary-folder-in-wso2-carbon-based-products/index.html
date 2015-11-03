@@ -48,6 +48,9 @@
 <div class="container">
   <h3>How to change default temporary folder in WSO2 carbon based products</h3>
   <span class="text-info">Mar 11, 2012 &middot; 1 minute read &middot; <a href="http://shelan.org/blog/2012/03/11/how-to-change-default-temporary-folder-in-wso2-carbon-based-products/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="tag" href="http://shelan.org/categories/tech">tech</a>
     </span>
   <p><p><div dir="ltr" style="text-align: left;" trbidi="on">In wso2 carbon based products default temporary folder is {product_home}/tmp.<br /><br />&nbsp;If you need to change that location to a  different location here is the way to do it.<br /><br />&nbsp;You can change the location by changing the locations in start up scripts.<br /><br />&nbsp;1) In Linux (/bin/wso2server.sh) change following parameter&rsquo;s location.<br /><br /><pre class="brush:js;"><br />&nbsp;-Djava.io.tmpdir=&ldquo;$CARBON_HOME/tmp&rdquo;<br /><br /></pre><br /> &nbsp;2) In Windows (/bin/wso2server.bat) change the following parameter&rsquo;s location.<br /><pre class="brush:js;"><br />&nbsp;-Djava.io.tmpdir=&ldquo;%CARBON_HOME%\tmp&rdquo;</div><br /></pre></p>
 </p>
