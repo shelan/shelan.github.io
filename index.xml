@@ -6,8 +6,53 @@
     <description>Recent content on Uncompiled Source Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2015 21:19:49 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 15 Dec 2015 20:59:34 +0100</lastBuildDate>
     <atom:link href="http://shelan.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Configuring i2 amazon instances for SSDs</title>
+      <link>http://shelan.org/blog/2015/12/15/configuring-i2-amazon-instances-for-ssds/</link>
+      <pubDate>Tue, 15 Dec 2015 20:59:34 +0100</pubDate>
+      
+      <guid>http://shelan.org/blog/2015/12/15/configuring-i2-amazon-instances-for-ssds/</guid>
+      <description>&lt;p&gt;If you are configuring Amazon instances for storage optimized workloads, You might want to use amazon i2 instances. They are backed by super fast SSDs than
+conventional hard drives therefore it is suitable for disk intensive workloads.&lt;/p&gt;
+
+&lt;p&gt;if you issue the command&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df -h
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you may inspect current available disk storage and mounted paths.&lt;/p&gt;
+
+&lt;p&gt;In that case, have you ever wondered that your newly spawn amazon I2 instance(if i2.xlarge ==&amp;gt; 1 800GB SSD and if it i2.2xlarge 2x 800GB so on.) does not have 800GB hard disks it claimed to have. If so it is because both I2 and R3 instances support TRIM.&lt;/p&gt;
+
+&lt;p&gt;So here is what you need to do to make that storage available.&lt;/p&gt;
+
+&lt;p&gt;To format and mount the disk you can follow the below steps.&lt;/p&gt;
+
+&lt;p&gt;1) Examine available drives&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo fdisk -l
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) choose the drive you need to create a file system. (eg: if you choose xvdb and want to create ext3 file system for linux)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo mkfs.ext4 -E nodiscard /dev/xvdb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) You can now mount the disk to any folder path you need. In this you mount the formatted disk to /mnt/my-data&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo mount -o discard /dev/xvdb /mnt/my-data
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you may&lt;/p&gt;
+
+&lt;p&gt;If you need further details please refer following link.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#InstanceStoreTrimSupport&#34;&gt;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#InstanceStoreTrimSupport&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Moved to Hugo</title>
@@ -168,16 +213,6 @@
       
       <guid>http://shelan.org/blog/2014/10/25/how-to-correct-error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-/tmp/mysql.sock-on-mac-os-x/</guid>
       <description>&lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;br /&gt;I tried to install mysql using home-brew. Everything was successful But could not connect to the server. Obviously server have not started.&lt;br /&gt;&lt;br /&gt;&lt;div style=&#34;background-color: black; color: whitesmoke; font-family: Monaco; font-size: 12px;&#34;&gt;ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/tmp/mysql.sock&#39; (2)&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Sigh..&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Following command rescued me..&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;&lt;pre class=&#34;lang-sql prettyprint prettyprinted&#34; style=&#34;background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, &#39;Lucida Console&#39;, &#39;Liberation Mono&#39;, &#39;DejaVu Sans Mono&#39;, &#39;Bitstream Vera Sans Mono&#39;, &#39;Courier New&#39;, monospace, serif; font-size: 14px; line-height: 17.804800033569336px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;&#34;&gt;&lt;code style=&#34;border: 0px; font-family: Consolas, Menlo, Monaco, &#39;Lucida Console&#39;, &#39;Liberation Mono&#39;, &#39;DejaVu Sans Mono&#39;, &#39;Bitstream Vera Sans Mono&#39;, &#39;Courier New&#39;, monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;&#34;&gt;&lt;span class=&#34;pln&#34; style=&#34;background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;mysqld stop&lt;br /&gt;mysql&lt;/span&gt;&lt;span class=&#34;pun&#34; style=&#34;background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34; style=&#34;background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;server start&lt;/span&gt;&lt;span class=&#34;kwd&#34; style=&#34;background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;I found it in this stack overflow answer.&lt;/div&gt;&lt;div&gt;&lt;a href=&#34;http://stackoverflow.com/questions/15016376/cant-connect-to-local-mysql-server-through-socket-homebrew&#34; target=&#34;_blank&#34;&gt;http://stackoverflow.com/questions/15016376/cant-connect-to-local-mysql-server-through-socket-homebrew&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to install Hadoop Standalone / Pseudo Distributed mode 2.X.X on Mac with OS X Mavericks</title>
-      <link>http://shelan.org/blog/2014/10/11/how-to-install-hadoop-standalone-/-pseudo-distributed-mode-2.x.x-on-mac-with-os-x-mavericks/</link>
-      <pubDate>Sat, 11 Oct 2014 13:52:00 +0000</pubDate>
-      
-      <guid>http://shelan.org/blog/2014/10/11/how-to-install-hadoop-standalone-/-pseudo-distributed-mode-2.x.x-on-mac-with-os-x-mavericks/</guid>
-      <description>&lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-E3ROgfxvwME/TdGLas3CI4I/AAAAAAAAACY/KFKgg1BTmPA/s400/img-carousel-2.jpg&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img alt=&#34;&#34; border=&#34;0&#34; src=&#34;http://1.bp.blogspot.com/-E3ROgfxvwME/TdGLas3CI4I/AAAAAAAAACY/KFKgg1BTmPA/s400/img-carousel-2.jpg&#34; height=&#34;127&#34; title=&#34;Hadoop&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;span style=&#34;font-size: xx-small;&#34;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Image source: http://www.javacodegeeks.com/2011/05/hadoop-soft-introduction.html&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;I was searching for a complete tutorial on installing Hadoop on Mac and play around with it. There are resources on installing Hadoop with &#34;HomeBrew&#34; which is the missing package manager in Mac ;). But i do not want to offload all the configuration burden to it as i need to learn this from top to bottom. I played with some and here are the configuration steps i followed.&lt;br /&gt;&lt;br /&gt;1) You need to download and extract Hadoop Binary. I used Hadoop 2.5.1 which is the latest at the moment.&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://www.apache.org/dyn/closer.cgi/hadoop/common/&#34;&gt;http://www.apache.org/dyn/closer.cgi/hadoop/common/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;2) Extract the binary and lets called the location as HADOOP_HOME&lt;br /&gt;&lt;br /&gt;eg: /Users/user1/software/hadoop-2.5.1&lt;br /&gt;&lt;br /&gt;3) Add HADOOP_HOME and JAVA_HOME &amp;nbsp;as path variables to your system. You can add them to&lt;br /&gt;&lt;div&gt;bashrc or bash_profile.&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;You can add them by issuing following commands.&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;br /&gt;$vim ~/.bash_profile&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Add following entries and change paths according to your machine&#39;s configurations.&amp;nbsp;&lt;/div&gt;&lt;br /&gt;&lt;pre&gt;&lt;code&gt;&lt;br /&gt;export JAVA_HOME=$(/usr/libexec/java_home)&lt;br /&gt;export HADOOP_HOME=/Users/user1/software/hadoop-2.5.1&lt;br /&gt;export PATH=$PATH:$HADOOP_HOME&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;&lt;div&gt;and then reload the configurations.&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;br /&gt;$source ~/.bash_profile&lt;br /&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;(Follow these steps if you need to run in Pseudo Distributed mode. If you do continue you will have to add input files to the HDFS and then download output files from the HDFS too.)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br /&gt;&lt;div&gt;4) Navigate to HADOOP_HOME and change following files as below.&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;&lt;div class=&#34;section&#34; style=&#34;font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13px; padding: 4px;&#34;&gt;&lt;div style=&#34;font-size: 12px; line-height: 1.3em;&#34;&gt;etc/hadoop/core-site.xml:&lt;/div&gt;&lt;div class=&#34;source&#34; style=&#34;border: 1px solid rgb(153, 153, 153); margin: 1em 7px; overflow: auto; padding: 12px;&#34;&gt;&lt;pre style=&#34;padding: 0px;&#34;&gt;&amp;lt;configuration&amp;gt;&lt;br /&gt;    &amp;lt;property&amp;gt;&lt;br /&gt;        &amp;lt;name&amp;gt;fs.defaultFS&amp;lt;/name&amp;gt;&lt;br /&gt;        &amp;lt;value&amp;gt;hdfs://localhost:9000&amp;lt;/value&amp;gt;&lt;br /&gt;    &amp;lt;/property&amp;gt;&lt;br /&gt;&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/div&gt;&lt;div style=&#34;font-size: 12px; line-height: 1.3em;&#34;&gt;etc/hadoop/hdfs-site.xml:&lt;/div&gt;&lt;div class=&#34;source&#34; style=&#34;border: 1px solid rgb(153, 153, 153); margin: 1em 7px; overflow: auto; padding: 12px;&#34;&gt;&lt;pre style=&#34;padding: 0px;&#34;&gt;&amp;lt;configuration&amp;gt;&lt;br /&gt;    &amp;lt;property&amp;gt;&lt;br /&gt;        &amp;lt;name&amp;gt;dfs.replication&amp;lt;/name&amp;gt;&lt;br /&gt;        &amp;lt;value&amp;gt;1&amp;lt;/value&amp;gt;&lt;br /&gt;    &amp;lt;/property&amp;gt;&lt;br /&gt;&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;br /&gt;5) Setup passphraseless ssh&lt;br /&gt;&lt;br /&gt;Now check that you can ssh to the localhost without a passphrase:&lt;br /&gt;$ ssh localhost&lt;br /&gt;&lt;br /&gt;If you cannot ssh to localhost without a passphrase, execute the following commands:&lt;br /&gt;&lt;pre&gt;&lt;code&gt;&lt;br /&gt;$ ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa&lt;br /&gt; $ cat ~/.ssh/id_dsa.pub &amp;gt;&amp;gt; ~/.ssh/authorized_keys&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;(You may need to enable remote-login in system preferences --&amp;gt; sharing if you have not enabled it later to login through ssh.)&lt;/code&gt;&lt;/pre&gt;6) Starting the Hadoop in Standalone mode.  &lt;/div&gt;&amp;nbsp; &lt;br /&gt;Navigate to $HADOOP_HOME&lt;br /&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Format the filesystem:&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;br /&gt; $ bin/hdfs namenode -format&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;Start NameNode daemon and DataNode daemon:&lt;br /&gt;&lt;pre&gt;&lt;code&gt;&lt;br /&gt;$ sbin/start-dfs.sh&lt;br /&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;The hadoop daemon log output is written to the $HADOOP_LOG_DIR directory (defaults to $HADOOP_HOME/logs).&lt;br /&gt;Browse the web interface for the NameNode; by default it is available at: &lt;br /&gt;&lt;div&gt;&lt;br /&gt;NameNode - &lt;a href=&#34;http://localhost:50070/&#34; target=&#34;_blank&#34;&gt;http://localhost:50070/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;So good luck with all your map reduce jobs. :)&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;References :&lt;span id=&#34;docs-internal-guid-b7a54bfc-00f6-64ae-430d-6b42142d9b51&#34;&gt;&lt;/span&gt;&lt;br /&gt;&lt;div dir=&#34;ltr&#34; style=&#34;line-height: 1.15; margin-bottom: 0pt; margin-top: 0pt;&#34;&gt;&lt;span id=&#34;docs-internal-guid-b7a54bfc-00f6-64ae-430d-6b42142d9b51&#34;&gt;&lt;span style=&#34;color: #1155cc; font-family: Arial; font-size: 15px; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&#34;&gt;&lt;a href=&#34;http://hadoop.apache.org/docs/r2.5.1/hadoop-project-dist/hadoop-common/SingleCluster.html#Standalone_Operation&#34; style=&#34;text-decoration: none;&#34;&gt;http://hadoop.apache.org/docs/r2.5.1/hadoop-project-dist/hadoop-common/SingleCluster.html#Standalone_Operation&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;span id=&#34;docs-internal-guid-b7a54bfc-00f6-64ae-430d-6b42142d9b51&#34;&gt;&lt;/span&gt;&lt;br /&gt;&lt;div&gt;&lt;span id=&#34;docs-internal-guid-b7a54bfc-00f6-64ae-430d-6b42142d9b51&#34;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;span id=&#34;docs-internal-guid-b7a54bfc-00f6-64ae-430d-6b42142d9b51&#34;&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
     </item>
     
