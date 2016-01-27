@@ -36,30 +36,113 @@ if you find anything more useful.&lt;/p&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + R&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Go to symbol. This is handy to list down method names in a file&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + F&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Find  in current file&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + ⌥ + F&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Replace&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + ⇧ + F&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Find in files  (This will search in the folders you specify or in all the files in general)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + L&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Select line - Repeat to select next lines&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + D&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Select word - Repeat to select next occurrence&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌃ + ⌘ + G&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Select all occurrences of current selection&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + K + ⌫&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Delete from cursor to start of line&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + ]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Indent current line(s)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + [&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Un-indent current line(s)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;⌘ + ⇧ + D&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Duplicate line(s)&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;p&gt;|&lt;code&gt;⌘ + R&lt;/code&gt;                 | Go to symbol. This is handy to list down method names in a file|
-| | |
-|&lt;code&gt;⌘ + F&lt;/code&gt;           | Find  in current file   |
-| | |&lt;br /&gt;
-|&lt;code&gt;⌘ + ⌥ + F&lt;/code&gt;        |Replace   |
-| | |
-|&lt;code&gt;⌘ + ⇧ + F&lt;/code&gt;        |Find in files  (This will search in the folders you specify or in all the files in general)|
-| | |
-|&lt;code&gt;⌘ + L&lt;/code&gt;         | Select line - Repeat to select next lines  |
-| | |
-|&lt;code&gt;⌘ + D&lt;/code&gt;          | Select word - Repeat to select next occurrence |
-| | |&lt;br /&gt;
-| &lt;code&gt;⌃ + ⌘ + G&lt;/code&gt;      | Select all occurrences of current selection     |&lt;br /&gt;
-| | |
-|&lt;code&gt;⌘ + K + ⌫&lt;/code&gt;     |   Delete from cursor to start of line    |
-| | |
-|&lt;code&gt;⌘ + ]&lt;/code&gt;        | Indent current line(s)     |
-| | |&lt;br /&gt;
-|&lt;code&gt;⌘ + [&lt;/code&gt;        |  Un-indent current line(s) |
-| | |&lt;br /&gt;
-|&lt;code&gt;⌘ + ⇧ + D&lt;/code&gt;     |  Duplicate line(s)  |&lt;/p&gt;
 </description>
     </item>
     
