@@ -6,8 +6,43 @@
     <description>Recent content on Uncompiled Source Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2015 20:59:34 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jan 2016 11:59:43 +0100</lastBuildDate>
     <atom:link href="http://shelan.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>best sublime shortcuts</title>
+      <link>http://shelan.org/blog/2016/01/27/best-sublime-shortcuts/</link>
+      <pubDate>Wed, 27 Jan 2016 11:59:43 +0100</pubDate>
+      
+      <guid>http://shelan.org/blog/2016/01/27/best-sublime-shortcuts/</guid>
+      <description>&lt;p&gt;Following is a top collection of sublime shortcuts that are frequently used in day to day developement. Suggest something
+if you find anything more useful.&lt;/p&gt;
+
+&lt;p&gt;⌘ + P or ⌘ + T    search and open files by name&lt;/p&gt;
+
+&lt;p&gt;⌘ + R  Go to symbol. This is handy to list down method names in a file&lt;/p&gt;
+
+&lt;p&gt;⌘ + F            Find  in current file&lt;/p&gt;
+
+&lt;p&gt;⌘ + ⌥ + F        Replace&lt;/p&gt;
+
+&lt;p&gt;⌘ + ⇧ + F        Find in files  (This will search in the folders you specify or in all the files in general)&lt;/p&gt;
+
+&lt;p&gt;⌘ + L           Select line - Repeat to select next lines&lt;/p&gt;
+
+&lt;p&gt;⌘ + D           Select word - Repeat to select next occurrence&lt;/p&gt;
+
+&lt;p&gt;⌃ + ⌘ + G       Select all occurrences of current selection&lt;/p&gt;
+
+&lt;p&gt;⌘ + K + ⌫        Delete from cursor to start of line&lt;/p&gt;
+
+&lt;p&gt;⌘ + ]           Indent current line(s)&lt;/p&gt;
+
+&lt;p&gt;⌘ + [           Un-indent current line(s)&lt;/p&gt;
+
+&lt;p&gt;⌘ + ⇧ + D       Duplicate line(s)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Configuring i2 amazon instances for SSDs</title>
@@ -203,16 +238,6 @@ conventional hard drives therefore it is suitable for disk intensive workloads.&
       
       <guid>http://shelan.org/blog/2014/11/09/how-to-remote-debug-standalone-hadoop/</guid>
       <description>&lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;br /&gt;&amp;nbsp; When you run your map reduce applications you may have hiccups here and there and may need to have a look inside. If you need to remote debug rather going through logs and figuring out what went wrong following is the procedure.&lt;br /&gt;&lt;br /&gt;I am using Intellij Idea as the IDE but for other IDE&#39;s process is similar.&lt;br /&gt;&lt;br /&gt;1) In Intellij Idea go to Run &amp;gt; Edit Configuration and then click on &#34;+&#34; . And then add &lt;b&gt;Remote&lt;/b&gt; for &#34;Remote Debugging&#34;&lt;br /&gt;&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-suphck5-eAI/VF_s_cRn92I/AAAAAAAADnY/9CPApa4cVGk/s1600/Screen%2BShot%2B2014-11-09%2Bat%2B10.34.01%2BPM.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://3.bp.blogspot.com/-suphck5-eAI/VF_s_cRn92I/AAAAAAAADnY/9CPApa4cVGk/s1600/Screen%2BShot%2B2014-11-09%2Bat%2B10.34.01%2BPM.png&#34; height=&#34;400&#34; width=&#34;250&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;2) You will have following window after clicking on Remote. You can change the port you are using for remote debugging in this panel.&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-ae_sc8hJS3c/VF_tXHghQdI/AAAAAAAADng/B6ypW0YpMn4/s1600/Screen%2BShot%2B2014-11-09%2Bat%2B10.34.13%2BPM.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://1.bp.blogspot.com/-ae_sc8hJS3c/VF_tXHghQdI/AAAAAAAADng/B6ypW0YpMn4/s1600/Screen%2BShot%2B2014-11-09%2Bat%2B10.34.13%2BPM.png&#34; height=&#34;320&#34; width=&#34;640&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: justify;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: justify;&#34;&gt;3) Open your Hadoop Root folder and navigate to etc/hadoop-env.sh in your editor. At the bottom of the file add the following line. (Make sure to have the port you given for IDE configuration as the address)&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: justify;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;color: #d12f1b; font-family: Menlo; font-size: 11px;&#34;&gt;&lt;span style=&#34;color: #bb2ca2; font-variant-ligatures: no-common-ligatures;&#34;&gt;export&lt;/span&gt;&lt;span style=&#34;color: black; font-variant-ligatures: no-common-ligatures;&#34;&gt; HADOOP_OPTS=&lt;/span&gt;&#34;-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005&#34;&lt;/div&gt;&lt;div style=&#34;color: #d12f1b; font-family: Menlo; font-size: 11px;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;br /&gt;Now you can start hadoop in standalone mode and it will wait until you attach your IDE to debug process to resume.&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;br /&gt;&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to correct ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket /tmp/mysql.sock on Mac OS X</title>
-      <link>http://shelan.org/blog/2014/10/25/how-to-correct-error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-/tmp/mysql.sock-on-mac-os-x/</link>
-      <pubDate>Sat, 25 Oct 2014 02:35:00 +0000</pubDate>
-      
-      <guid>http://shelan.org/blog/2014/10/25/how-to-correct-error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-/tmp/mysql.sock-on-mac-os-x/</guid>
-      <description>&lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;br /&gt;I tried to install mysql using home-brew. Everything was successful But could not connect to the server. Obviously server have not started.&lt;br /&gt;&lt;br /&gt;&lt;div style=&#34;background-color: black; color: whitesmoke; font-family: Monaco; font-size: 12px;&#34;&gt;ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/tmp/mysql.sock&#39; (2)&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Sigh..&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Following command rescued me..&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;&lt;pre class=&#34;lang-sql prettyprint prettyprinted&#34; style=&#34;background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, &#39;Lucida Console&#39;, &#39;Liberation Mono&#39;, &#39;DejaVu Sans Mono&#39;, &#39;Bitstream Vera Sans Mono&#39;, &#39;Courier New&#39;, monospace, serif; font-size: 14px; line-height: 17.804800033569336px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;&#34;&gt;&lt;code style=&#34;border: 0px; font-family: Consolas, Menlo, Monaco, &#39;Lucida Console&#39;, &#39;Liberation Mono&#39;, &#39;DejaVu Sans Mono&#39;, &#39;Bitstream Vera Sans Mono&#39;, &#39;Courier New&#39;, monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;&#34;&gt;&lt;span class=&#34;pln&#34; style=&#34;background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;mysqld stop&lt;br /&gt;mysql&lt;/span&gt;&lt;span class=&#34;pun&#34; style=&#34;background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34; style=&#34;background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;server start&lt;/span&gt;&lt;span class=&#34;kwd&#34; style=&#34;background-color: transparent; border: 0px; color: darkblue; margin: 0px; padding: 0px; vertical-align: baseline;&#34;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;I found it in this stack overflow answer.&lt;/div&gt;&lt;div&gt;&lt;a href=&#34;http://stackoverflow.com/questions/15016376/cant-connect-to-local-mysql-server-through-socket-homebrew&#34; target=&#34;_blank&#34;&gt;http://stackoverflow.com/questions/15016376/cant-connect-to-local-mysql-server-through-socket-homebrew&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
     </item>
     
