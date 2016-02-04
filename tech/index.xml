@@ -15,10 +15,10 @@
       <pubDate>Sun, 31 Jan 2016 23:35:00 +0100</pubDate>
       
       <guid>http://shelan.org/blog/2016/01/31/reproducible-experiment-to-compare-apache-spark-and-apache-flink-batch-processing/</guid>
-      <description>&lt;p&gt;How do you reproduce distributed experiments?&lt;/p&gt;
-
-&lt;p&gt;Have you ever experienced the pain of installing and configuring necessary
+      <description>&lt;p&gt;How do you reproduce distributed experiments? Have you ever experienced the pain of installing and configuring necessary
 software to run a distributed experiment.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://shelan.org/images/tired-of-writing.gif&#34; alt=&#34;example-image&#34; class=&#34;img-rounded img-responsive&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://karamel.io&#34;&gt;Karamel&lt;/a&gt; comes to rescue you if you are struggling in that problem.&lt;/p&gt;
 
