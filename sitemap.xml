@@ -212,4 +212,52 @@
     <lastmod>2011-12-01T03:50:00+00:00</lastmod>
   </url>
   
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-200/report_memory/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-200/report_network/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-200/report_disk/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-200/report_cpu/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-400/report_memory/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-400/report_cpu/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-400/report_disk/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-400/report_network/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-600/report_memory/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-600/report_network/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-600/report_disk/</loc>
+  </url>
+  
+  <url>
+    <loc>http://shelan.org/flink-spark-batch-reports/terasort-600/report_cpu/</loc>
+  </url>
+  
 </urlset>
