@@ -42,11 +42,11 @@ software to run a distributed experiment.&lt;/p&gt;
 
 &lt;h6&gt;System level performance results of the experiments.&lt;/h6&gt;
 
-&lt;p&gt;&lt;a href=&#34;shelan.org/flink-spark-batch-reports/terasort-200/report_cpu.html&#34;&gt;200GB workload&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://shelan.org/flink-spark-batch-reports/terasort-200/report_cpu.html&#34;&gt;200GB workload&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;shelan.org/flink-spark-batch-reports/terasort-400/report_cpu.html&#34;&gt;400GB workload&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://shelan.org/flink-spark-batch-reports/terasort-400/report_cpu.html&#34;&gt;400GB workload&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;shelan.org/flink-spark-batch-reports/terasort-600/report_cpu.html&#34;&gt;600GB workload&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://shelan.org/flink-spark-batch-reports/terasort-600/report_cpu.html&#34;&gt;600GB workload&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;You can find the full report of the project &lt;a href=&#34;https://www.scribd.com/doc/297923938/Apache-Spark-vs-Apache-Flink-Reproducible-Experiments-on-cloud&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
