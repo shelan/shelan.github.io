@@ -1,0 +1,142 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Reproducible Experiment to Compare Apache Spark and Apache Flink batch processing &middot; </title>
+    
+    <link rel="stylesheet" href="http://shelan.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://shelan.org/css/flat-ui.css">
+    <link rel="stylesheet" href="http://shelan.org/css/highlight/monokai_sublime.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  </head>
+  <nav class="navbar navbar-default navbar-embossed " role="navigation">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Shelan Perera</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-4">
+      <ul class="nav navbar-nav">
+        <li><a href="/tech">Tech Posts</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right nav-pills">
+            <li>
+            <a href="https://github.com/shelan">
+                <i class="fui-github"></i>
+            </a>
+            </li>
+            <li>
+            <a href="https://www.linkedin.com/pub/shelan-perera/a/194/465" class="btn btn-social-icon btn-twitter">
+                <i class="fui-linkedin"></i>
+            </a>
+            </li>
+                            <li>
+            <a href="https://twitter.com/shelan">
+                <i class="fa fui-twitter"></i>
+            </a>
+            </li>
+          </ul>
+    </div>
+  </nav>
+
+  <body>
+
+<div class="container">
+  <h3>Reproducible Experiment to Compare Apache Spark and Apache Flink batch processing</h3>
+  <span class="text-info">Jan 31, 2016 &middot; 2 minute read &middot; <a href="http://shelan.org/blog/2016/01/31/reproducible-experiment-to-compare-apache-spark-and-apache-flink-batch-processing/#disqus_thread">Comments</a>
+    </span>
+  <p><p>How do you reproduce distributed experiments?</p>
+
+<p>Have you ever experienced the pain of installing and configuring necessary
+software to run a distributed experiment.</p>
+
+<p><a href="http://karamel.io">Karamel</a> comes to rescue you if you are struggling in that problem.</p>
+
+<p>Karamel is an orchestration engine which helps you design and run distributed experiments on the cloud such as Amazon EC2
+ Google Compute Engine, Open Stack etc.It provides a convenient GUI to design reproducible experiments and also a Domain Specific Language (DSL)
+ to declare dependencies and software tools that are required to setup and run the experiments.
+ This is a starting to make painful distributed experiments as easy as running it locally with a single click. How easy
+ and convenient it would be for a  researcher to tune few knobs of the experiment and re run in a total different scale.</p>
+
+<p>Watch these two clips and experience it yourself.</p>
+
+<p><a href="http://www.karamel.io/?q=content/video-tutorials">http://www.karamel.io/?q=content/video-tutorials</a></p>
+
+<p>We recently made <a href="http://eastcirclek.blogspot.se/2015/06/terasort-for-spark-and-flink-with-range.html">Dongwong&rsquo;s</a> Apache Flink
+ vs Apache Spark experiment reproducible on Amazon EC2. If you want to reproduce the same experiment conveniently with
+ different configurations you can follow the steps mentioned <a href="https://github.com/karamel-lab/batch-processing-comparison">here</a>.</p>
+
+<p>Following is the presentation about the results we obtained.</p>
+
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/iORw4on0Oy1WZI" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shelan1/apache-flink-vs-apache-spark-reproducible-experiments-on-cloud" title="Apache Flink vs Apache Spark - Reproducible experiments on cloud." target="_blank">Apache Flink vs Apache Spark - Reproducible experiments on cloud.</a> </strong> from <strong><a href="//www.slideshare.net/shelan1" target="_blank">Shelan Perera</a></strong> </div></p>
+
+<h6>System level performance results of the experiments.</h6>
+
+<p><a href="shelan.org/flink-spark-batch-reports/terasort-200/report_cpu.html">200GB workload</a></p>
+
+<p><a href="shelan.org/flink-spark-batch-reports/terasort-400/report_cpu.html">400GB workload</a></p>
+
+<p><a href="shelan.org/flink-spark-batch-reports/terasort-600/report_cpu.html">600GB workload</a></p>
+
+<p>You can find the full report of the project <a href="https://www.scribd.com/doc/297923938/Apache-Spark-vs-Apache-Flink-Reproducible-Experiments-on-cloud">here</a>.</p>
+
+<h6> Acknowledgment </h6>
+
+<p><a href="https://www.sics.se/people/jim-dowling">Jim Dowling</a></p>
+
+<p><a href="https://github.com/kamalhakim">Kamal Hakimzadeh</a></p>
+
+<p><a href="https://github.com/ashansa">Ashansa Perera</a></p>
+</p>
+</body>
+<footer class="panel-footer navbar-fixed-bottom">
+<div class="container">
+	<p class="text-muted">Copyright Shelan Perera @ 2015</p>
+</div>
+</footer>
+<script src="http://shelan.org/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/flat-ui.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/html5shiv.js"></script>
+<script src="/js/respond.js"></script>
+
+<script>
+var _gaq=[['_setAccount','UA-56325764-1'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</html>
+
+<div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "shelanblog";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "shelanblog";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
