@@ -6,8 +6,158 @@
     <description>Recent content on Uncompiled Source Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Feb 2016 22:27:50 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2016 11:07:14 +0100</lastBuildDate>
     <atom:link href="http://shelan.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker Multi Host Networking with Vagrant</title>
+      <link>http://shelan.org/blog/2016/03/01/docker-multi-host-networking-with-vagrant/</link>
+      <pubDate>Tue, 01 Mar 2016 11:07:14 +0100</pubDate>
+      
+      <guid>http://shelan.org/blog/2016/03/01/docker-multi-host-networking-with-vagrant/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;http://shelan.org/images/docker-network.jpg&#34; alt=&#34;docker-network&#34; class=&#34;img-rounded img-responsive&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Docker networking is progressing and it recently released its 1.0 release. Initially docker mostly used on a single host. With the high usage and complex use cases, the requirement of multi-host networking emerged and people have used many different ways to achieve it. In this article, let&amp;rsquo;s explore docker networking.&lt;/p&gt;
+
+&lt;p&gt;By default, docker provides the following networks. You can inspect them with the following command&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker network ls
+NETWORK ID          NAME                DRIVER
+7fca4eb8c647        bridge              bridge
+9f904ee27bf5        none                null
+cf03ee007fb4        host                host
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can refer &lt;a href=&#34;https://docs.docker.com/engine/userguide/networking/dockernetworks/&#34;&gt;docker networking&lt;/a&gt; for a comprehensive guide to understand docker default networking.&lt;/p&gt;
+
+&lt;h3 id=&#34;docker-multi-host-networking:eca2e7279b291b619d04c388f37a8c56&#34;&gt;docker Multi Host Networking&lt;/h3&gt;
+
+&lt;p&gt;Lets look at what docker proposes for multi-host networking. There are several ways to achieve the docker multi-host networking. In addition to basic network bridge, host and null you can use docker&amp;rsquo;s overlay network to connect multiple hosts. In order to create an overlay network you need to have a key value store configured and setup.&lt;/p&gt;
+
+&lt;p&gt;There are different key value stores that can be used with docker overlay networking. Docker &lt;a href=&#34;https://github.com/docker/libkv&#34;&gt;libkv&lt;/a&gt; supports key-value stores such as Consul, Etcd, Zookeeper (Distributed store) and BoltDB (Local store). In this tutorial let&amp;rsquo;s use Consul. Overlay network connects multiple hosts and your containers will be connected to each other through overlay network as if they are on the same network. Docker used VxLAN internally to provide this functionality to create virtualized network layer.&lt;/p&gt;
+
+&lt;p&gt;Overlay networks provide a setup usually as the following the figure. It has 3 hosts and we use one of them to bootstrap Consul Key-value store. And other two hosts are connected by overlay network. All the containers are instantiated with overlay networking options so they connect to overlay network.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://shelan.org/images/multi-host.png&#34; alt=&#34;multi-host-image&#34; class=&#34;img-rounded img-responsive&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;I will be following &lt;a href=&#34;https://docs.docker.com/engine/userguide/networking/get-started-overlay/&#34;&gt;this&lt;/a&gt; tutorial from Docker documentation. But let&amp;rsquo;s do it this time with vagrant boxes.&lt;/p&gt;
+
+&lt;p&gt;You need to have these installed on your machine to begin. All of the software are single click installable without much hassle.&lt;/p&gt;
+
+&lt;p&gt;1) &lt;a href=&#34;https://www.vagrantup.com/downloads.html&#34;&gt;Vagrant&lt;/a&gt; and &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;Virtualbox&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2) &lt;a href=&#34;https://docs.docker.com/machine/install-machine/&#34;&gt;Docker Machine&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Clone the Vagrant files to you local machine.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;git clone https://github.com/shelan/vagrant-ubunut-nodes&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Navigate to &amp;ldquo;vagrant-ubunut-nodes&amp;rdquo; folder and run following command. It will spawn 3 virtual box machines with ubuntu 15.10. Using a newer ubuntu version is important as docker networking needs a Linux kernel &amp;gt;= 3.16&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;vagrant up&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Usually we use docker-machine to create virtual box instances also. But in this tutorial, I am showing how we can add existing VMs to docker-machine and manage them through docker-machine.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this, we will be using the &lt;strong&gt;generic&lt;/strong&gt; driver of docker-machine. you can pass following options to it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;--generic-IP-address: **required** IP Address of the host.
+--generic-ssh-key: Path to the SSH user private key.
+--generic-ssh-user: SSH username used to connect.
+--generic-ssh-port: Port to use for SSH.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since we are using Vagrant you can use &lt;em&gt;vagrant&lt;/em&gt; user and private keys from &lt;a href=&#34;https://github.com/mitchellh/vagrant/tree/master/keys&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lets configure key value store first&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;docker-machine create --driver generic --generic-ip-address=172.28.128.5 --generic-ssh-key=&amp;lt;yourpath to private key folder&amp;gt;/ida_rsa --generic-ssh-user=vagrant mh-keystore&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;then run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$  docker $(docker-machine config mh-keystore) run -d \
+    -p &amp;quot;8500:8500&amp;quot; \
+    -h &amp;quot;consul&amp;quot; \
+    progrium/consul -server -bootstrap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Now it is time to install docker-engine in other hosts. Additionally, we need to configure those docker-engines to the key value we started in 172.28.128.5 machine.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker-machine create --driver generic --generic-ip-address=172.28.128.6 --generic-ssh-key=&amp;lt;yourpath to private key folder&amp;gt;/ida_rsa --generic-ssh-user=vagrant --engine-opt=cluster-store=consul://172.28.128.5:8500 --engine-opt=cluster-advertise=eth1:2376 mhs-demo0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;docker-machine create --driver generic --generic-ip-address=172.28.128.7 --generic-ssh-key=&amp;lt;yourpath to private key folder&amp;gt;/ida_rsa --generic-ssh-user=vagrant --engine-opt=cluster-store=consul://172.28.128.5:8500 --engine-opt=cluster-advertise=eth1:2376 mhs-demo1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above commands, you can use &lt;code&gt;consul://$(docker-machine ip mh-keystore):8500&lt;/code&gt; without hardcoding the ip of the key value server as well.&lt;/p&gt;
+
+&lt;p&gt;You can issue the command &lt;code&gt;docker-machine ls&lt;/code&gt; to inspect the running machines.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lets change our environment to vm2 (mhs-demo0) host.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ eval $(docker-machine env mhs-demo0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lets create an overlay network&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;docker network create --driver overlay --subnet=10.0.4.0/24 my-net
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inspect the running network&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;docker network ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might be able to see that there is a new network called my-net with driver type overlay is created. You can create many networks and make sure to change the subnet suitably to avoid collisions.&lt;/p&gt;
+
+&lt;p&gt;This newly created network is visible in both hosts. If you need to inspect what is being stored in the key value store you may navigate into.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://172.28.128.5:8500&#34;&gt;http://172.28.128.5:8500&lt;/a&gt; which provides you a GUI for consul key value store.&lt;/p&gt;
+
+&lt;p&gt;Now Let&amp;rsquo;s run a container in mhs-demo0&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -it --net=my-net ubuntu:trusty /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get the IP address of the container by issuing the command &lt;code&gt;ifconfig&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In another terminal, you might run another container. First let&amp;rsquo;s change the environment to mhs-demo1&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ eval $(docker-machine env mhs-demo1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now create another container with the overlay network&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -it --net=my-net ubuntu:trusty /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now try to ping the first container IP address (assume the first container is 10.0.4.2).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ping 10.0.4.2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And you should be able to ping between containers successfully. So now the multi-host networking works and basic setup is done to run your own experiments.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>I see something in you</title>
@@ -383,16 +533,6 @@ conventional hard drives therefore it is suitable for disk intensive workloads.&
       
       <guid>http://shelan.org/blog/2015/02/02/do-we-need-to-master-memory-in-googles-era-/</guid>
       <description>&lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;br /&gt;&amp;nbsp;If you need any information you just type Google. Simple is n&#39;t it? So do we have to bother about memorizing anything this world? Is there a pay back for what you memorize? Can we rely on internet and only just learn how to search and can we be successful?&lt;br /&gt;&lt;br /&gt;&amp;nbsp;I am sure most of the people have forgotten the importance of memorizing things in this information age. But the people who master memorizing things excel more often than people who do not. The simple reason is you can apply only what you know.&lt;br /&gt;&lt;br /&gt;As a Software Engineer and as a Masters student in computer science we often think for any problem we can just Google and find answers. But how fast? You may say within seconds you may have thousands of results before you.&lt;br /&gt;&lt;br /&gt;But... You need to type go to the first answer and if you are lucky you have a hit.. If not repeat until you find the correct answer. Imagine you have things in memory.... It will not take fractions of a second to retrieve. It will be simply comparing to a cache retrieval to a Hard disk access.&lt;br /&gt;&lt;br /&gt;People often think there are lots of information how can we memorize all these things? Yes it is true that in this digital world content is being produced super faster. But you have to be super smart to filter out what is important to you and memorize those things. We often underestimate the capability of retaining information in our brain and lazily forget techniques to master memory.&lt;br /&gt;&lt;br /&gt;If you have not read following &lt;a href=&#34;http://www.amazon.com/Unlimited-Memory-Advanced-Learning-Strategies-ebook/dp/B00I3QS1XQ&#34; target=&#34;_blank&#34;&gt;book&lt;/a&gt; is a great source of encouragement as well as a learning tool by a&lt;br /&gt;Memory Champ Kevin Horsley.&lt;br /&gt;&lt;br /&gt;Following video is one of his world record breaking videos [&lt;span style=&#34;background-color: white; color: #333333; font-family: arial, sans-serif; font-size: 13px; line-height: 17px;&#34;&gt;Successful World Record attempt in Pi matrix memorization]&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;iframe allowfullscreen=&#34;&#34; class=&#34;YOUTUBE-iframe-video&#34; data-thumbnail-src=&#34;https://ytimg.googleusercontent.com/vi/lmbpCUrCWdI/0.jpg&#34; frameborder=&#34;0&#34; height=&#34;300&#34; src=&#34;http://www.youtube.com/embed/lmbpCUrCWdI?feature=player_embedded&#34; width=&#34;400&#34;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;br /&gt;&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Learning Math and Science - Genius Mind</title>
-      <link>http://shelan.org/blog/2015/01/29/learning-math-and-science---genius-mind/</link>
-      <pubDate>Thu, 29 Jan 2015 08:57:00 +0000</pubDate>
-      
-      <guid>http://shelan.org/blog/2015/01/29/learning-math-and-science---genius-mind/</guid>
-      <description>&lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;br /&gt;&amp;nbsp;Do you think learning math and science is something alien from outer universe ? Do you struggle to solve complex mathematics or science problems? If you keep on adding questions there will be a lot to add on. Because even i have some of those problems in my mind.&lt;br /&gt;&lt;br /&gt;I excelled in college and was able to get into the top engineering University in Sri Lanka. At present i am reading for my Masters Degree in Distributed computing in Europe which involve Science and Mathematics heavily.&lt;br /&gt;&lt;br /&gt;If you read my post&lt;a href=&#34;http://blog.shelan.org/2014/09/want-to-learn-anything-faster.html&#34; target=&#34;_blank&#34;&gt;&amp;nbsp;Want to Learn anythin faster&lt;/a&gt;&amp;nbsp;was a spark to ignite my habit of learning. Often i was comfortable at Theoretical subjects which needed rote memorization or comprehension. I wanted to understand the reasons so anyone who suffers the same can be benefit of it. &amp;nbsp;Further there is a common misunderstanding that maths is hard and complex even before attempting to realize the beauty of it.&lt;br /&gt;&lt;br /&gt;As Human beings we are computing machines. We can do lot of maths in our head to survive in this world. To measure the distance by contrasting with other objects, Cross a road safely without being hit by a vehicle and the list is endless..So then why we cannot do it in the class room?&lt;br /&gt;&lt;br /&gt;I often find the way we approach math and science is wrong. There are several observations that i have made why we think maths is complex.&lt;br /&gt;&lt;br /&gt;1) If we relate a story to a problem and try to solve it will be easier than denoting it with x,y or any other mathematical notation. When we have a story we have solid mapping of the problems in our mind so understanding a problem and working towards a solution makes more realistic. Good mathematicians or scientists create problems more vivid in their minds. They live in it as real worlds. Symbols are just notation to express what they understood in common language.&lt;br /&gt;&lt;br /&gt;2) In classroom or tests we try to rote memorize concepts. Maths and science is super easy when you understand the fundamentals about it. You need to feel or live with the concepts to solve problems. learning an equation will not give you the ability to solve problems unless it is just a substitution.&lt;br /&gt;If you clearly observe an equation, it is a complete story. It is a story of how incidents of left side will come to a common agreement on your right hand side.&lt;br /&gt;&lt;br /&gt;3) Connect what you learn with what you know. Our brain is structured as a web. If you do not want to lose newly learnt concepts you have to link and bind with what you know to avoid loosing them. Isolated memory islands disappears soon. Try to relate to whatever the concept you have really understood and try to construct on top of that. If you find anything hard at once try it repeatably in different ways but always have a break. Our brain needs to digest and it takes time to assimilate.&lt;br /&gt;&lt;br /&gt;I am still researching and try to apply those concepts in practice to see how they work in real world. But it has been producing interesting results so far. I find myself learning more complex math or science problem than before as i changed the approach.&lt;br /&gt;&lt;br /&gt;I am currently reading this book which is an excellent resource for who wants to develop a &#34;mind for numbers&#34;. Happy learning.&lt;br /&gt;&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://www.tarcherbooks.net/wp-content/uploads/2014/04/Mind-for-Numbers.jpg&#34; height=&#34;200&#34; width=&#34;142&#34; /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://www.amazon.com/Mind-For-Numbers-Science-Flunked-ebook/dp/B00G3L19ZU&#34; target=&#34;_blank&#34;&gt;Mind&lt;/a&gt;&amp;nbsp;&lt;a href=&#34;http://www.amazon.com/Mind-For-Numbers-Science-Flunked-ebook/dp/B00G3L19ZU&#34; target=&#34;_blank&#34;&gt;for Numbers&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;
 </description>
     </item>
     
