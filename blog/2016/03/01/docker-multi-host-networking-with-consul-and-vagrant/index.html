@@ -1,0 +1,245 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Docker Multi Host Networking with Consul and Vagrant &middot; </title>
+    
+    <link rel="stylesheet" href="http://shelan.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://shelan.org/css/flat-ui.css">
+      <link rel="stylesheet" href="http://shelan.org/css/custom.css">
+    <link rel="stylesheet" href="http://shelan.org/css/highlight/monokai_sublime.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  </head>
+  <nav class="navbar navbar-default navbar-embossed " role="navigation">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Shelan Perera</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-4">
+      <ul class="nav navbar-nav">
+        <li><a href="/tech">Tech Posts</a></li>
+        <li><a href="/life">Life</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right nav-pills">
+            <li>
+            <a href="https://github.com/shelan">
+                <i class="fui-github"></i>
+            </a>
+            </li>
+            <li>
+            <a href="https://www.linkedin.com/pub/shelan-perera/a/194/465" class="btn btn-social-icon btn-twitter">
+                <i class="fui-linkedin"></i>
+            </a>
+            </li>
+                            <li>
+            <a href="https://twitter.com/shelan">
+                <i class="fa fui-twitter"></i>
+            </a>
+            </li>
+          </ul>
+    </div>
+  </nav>
+
+  <body>
+
+<div class="container">
+  <h3>Docker Multi Host Networking with Consul and Vagrant</h3>
+  <span class="text-info">Mar 1, 2016 &middot; 4 minute read &middot; <a href="http://shelan.org/blog/2016/03/01/docker-multi-host-networking-with-consul-and-vagrant/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="tag" href="http://shelan.org/categories/tech">tech</a>
+    </span>
+  <p>
+
+<p><img src="/images/docker-network.jpg" alt="docker-network" class="img-rounded img-responsive"></p>
+
+<p>Docker networking is progressing and it recently released its 1.0 release. Initially docker mostly used on a single host. With the high usage and complex use cases, the requirement of multi-host networking emerged and people have used many different ways to achieve it. In this article, let&rsquo;s explore docker networking.</p>
+
+<p>By default, docker provides the following networks. You can inspect them with the following command</p>
+
+<pre><code>$ docker network ls
+NETWORK ID          NAME                DRIVER
+7fca4eb8c647        bridge              bridge
+9f904ee27bf5        none                null
+cf03ee007fb4        host                host
+</code></pre>
+
+<p>You can refer <a href="https://docs.docker.com/engine/userguide/networking/dockernetworks/">docker networking</a> for a comprehensive guide to understand docker default networking.</p>
+
+<h3 id="docker-multi-host-networking:eca2e7279b291b619d04c388f37a8c56">docker Multi Host Networking</h3>
+
+<p>Lets look at what docker proposes for multi-host networking. There are several ways to achieve the docker multi-host networking. In addition to basic network bridge, host and null you can use docker&rsquo;s overlay network to connect multiple hosts. In order to create an overlay network you need to have a key value store configured and setup.</p>
+
+<p>There are different key value stores that can be used with docker overlay networking. Docker <a href="https://github.com/docker/libkv">libkv</a> supports key-value stores such as Consul, Etcd, Zookeeper (Distributed store) and BoltDB (Local store). In this tutorial let&rsquo;s use Consul. Overlay network connects multiple hosts and your containers will be connected to each other through overlay network as if they are on the same network. Docker used VxLAN internally to provide this functionality to create virtualized network layer.</p>
+
+<p>Overlay networks provide a setup usually as the following the figure. It has 3 hosts and we use one of them to bootstrap Consul Key-value store. And other two hosts are connected by overlay network. All the containers are instantiated with overlay networking options so they connect to overlay network.</p>
+
+<p><img src="/images/multi-host.png" alt="multi-host-image" class="img-rounded img-responsive"></p>
+
+<p>I will be following <a href="https://docs.docker.com/engine/userguide/networking/get-started-overlay/">this</a> tutorial from Docker documentation. But let&rsquo;s do it this time with vagrant boxes.</p>
+
+<p>You need to have these installed on your machine to begin. All of the software are single click installable without much hassle.</p>
+
+<p>1) <a href="https://www.vagrantup.com/downloads.html">Vagrant</a> and <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></p>
+
+<p>2) <a href="https://docs.docker.com/machine/install-machine/">Docker Machine</a></p>
+
+<p>Let&rsquo;s start,</p>
+
+<ul>
+<li>Clone the Vagrant files to you local machine.</li>
+</ul>
+
+<p><code>git clone https://github.com/shelan/vagrant-ubunut-nodes</code></p>
+
+<ul>
+<li>Navigate to &ldquo;vagrant-ubunut-nodes&rdquo; folder and run following command. It will spawn 3 virtual box machines with ubuntu 15.10. Using a newer ubuntu version is important as docker networking needs a Linux kernel &gt;= 3.16</li>
+</ul>
+
+<p><code>vagrant up</code></p>
+
+<ul>
+<li>Usually we use docker-machine to create virtual box instances also. But in this tutorial, I am showing how we can add existing VMs to docker-machine and manage them through docker-machine.</li>
+</ul>
+
+<p>In this, we will be using the <strong>generic</strong> driver of docker-machine. you can pass following options to it.</p>
+
+<pre><code>--generic-IP-address: **required** IP Address of the host.
+--generic-ssh-key: Path to the SSH user private key.
+--generic-ssh-user: SSH username used to connect.
+--generic-ssh-port: Port to use for SSH.
+</code></pre>
+
+<p>Since we are using Vagrant you can use <em>vagrant</em> user and private keys from <a href="https://github.com/mitchellh/vagrant/tree/master/keys">here</a></p>
+
+<ul>
+<li>Lets configure key value store first</li>
+</ul>
+
+<p><code>docker-machine create --driver generic --generic-ip-address=172.28.128.5 --generic-ssh-key=&lt;yourpath to private key folder&gt;/ida_rsa --generic-ssh-user=vagrant mh-keystore</code></p>
+
+<p>then run</p>
+
+<pre><code>$  docker $(docker-machine config mh-keystore) run -d \
+    -p &quot;8500:8500&quot; \
+    -h &quot;consul&quot; \
+    progrium/consul -server -bootstrap
+</code></pre>
+
+<ul>
+<li>Now it is time to install docker-engine in other hosts. Additionally, we need to configure those docker-engines to the key value we started in 172.28.128.5 machine.</li>
+</ul>
+
+<pre><code>$ docker-machine create --driver generic --generic-ip-address=172.28.128.6 --generic-ssh-key=&lt;yourpath to private key folder&gt;/ida_rsa --generic-ssh-user=vagrant --engine-opt=cluster-store=consul://172.28.128.5:8500 --engine-opt=cluster-advertise=eth1:2376 mhs-demo0
+</code></pre>
+
+<pre><code>docker-machine create --driver generic --generic-ip-address=172.28.128.7 --generic-ssh-key=&lt;yourpath to private key folder&gt;/ida_rsa --generic-ssh-user=vagrant --engine-opt=cluster-store=consul://172.28.128.5:8500 --engine-opt=cluster-advertise=eth1:2376 mhs-demo1
+</code></pre>
+
+<p>In the above commands, you can use <code>consul://$(docker-machine ip mh-keystore):8500</code> without hardcoding the ip of the key value server as well.</p>
+
+<p>You can issue the command <code>docker-machine ls</code> to inspect the running machines.</p>
+
+<ul>
+<li>Lets change our environment to vm2 (mhs-demo0) host.</li>
+</ul>
+
+<pre><code>$ eval $(docker-machine env mhs-demo0)
+</code></pre>
+
+<ul>
+<li>Lets create an overlay network</li>
+</ul>
+
+<pre><code>docker network create --driver overlay --subnet=10.0.4.0/24 my-net
+</code></pre>
+
+<ul>
+<li>Inspect the running network</li>
+</ul>
+
+<pre><code>docker network ls
+</code></pre>
+
+<p>You might be able to see that there is a new network called my-net with driver type overlay is created. You can create many networks and make sure to change the subnet suitably to avoid collisions.</p>
+
+<p>This newly created network is visible in both hosts. If you need to inspect what is being stored in the key value store you may navigate into.</p>
+
+<p><a href="http://172.28.128.5:8500">http://172.28.128.5:8500</a> which provides you a GUI for consul key value store.</p>
+
+<p>Now Let&rsquo;s run a container in mhs-demo0</p>
+
+<pre><code>docker run -it --net=my-net ubuntu:trusty /bin/bash
+</code></pre>
+
+<p>Get the IP address of the container by issuing the command <code>ifconfig</code>.</p>
+
+<p>In another terminal, you might run another container. First let&rsquo;s change the environment to mhs-demo1</p>
+
+<pre><code>$ eval $(docker-machine env mhs-demo1)
+</code></pre>
+
+<p>Now create another container with the overlay network</p>
+
+<pre><code>docker run -it --net=my-net ubuntu:trusty /bin/bash
+</code></pre>
+
+<p>Now try to ping the first container IP address (assume the first container is 10.0.4.2).</p>
+
+<pre><code>ping 10.0.4.2
+</code></pre>
+
+<p>And you should be able to ping between containers successfully. So now the multi-host networking works and basic setup is done to run your own experiments.</p>
+</p>
+</body>
+<footer class="panel-footer navbar-fixed-bottom">
+<div class="container">
+	<p class="text-muted">Copyright Shelan Perera @ 2016</p>
+</div>
+</footer>
+<script src="http://shelan.org/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/flat-ui.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/html5shiv.js"></script>
+<script src="/js/respond.js"></script>
+
+<script>
+var _gaq=[['_setAccount','UA-56325764-1'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</html>
+
+<div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "shelanblog";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "shelanblog";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
