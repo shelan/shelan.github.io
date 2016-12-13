@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Teches on Uncompiled Source Code</title>
-    <link>http://shelan.org/tech/</link>
-    <description>Recent content in Teches on Uncompiled Source Code</description>
+    <title>Tech-rsses on Uncompiled Source Code</title>
+    <link>http://shelan.org/tech/index.xml</link>
+    <description>Recent content in Tech-rsses on Uncompiled Source Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Mar 2016 11:07:14 +0100</lastBuildDate>
@@ -32,7 +32,7 @@ cf03ee007fb4        host                host
 
 &lt;p&gt;You can refer &lt;a href=&#34;https://docs.docker.com/engine/userguide/networking/dockernetworks/&#34;&gt;docker networking&lt;/a&gt; for a comprehensive guide to understand docker default networking.&lt;/p&gt;
 
-&lt;h3 id=&#34;docker-multi-host-networking:eca2e7279b291b619d04c388f37a8c56&#34;&gt;Docker Multi Host Networking&lt;/h3&gt;
+&lt;h3 id=&#34;docker-multi-host-networking&#34;&gt;Docker Multi Host Networking&lt;/h3&gt;
 
 &lt;p&gt;Lets look at what docker proposes for multi-host networking. There are several ways to achieve the docker multi-host networking. In addition to basic network bridge, host and null you can use docker&amp;rsquo;s overlay network to connect multiple hosts. In order to create an overlay network you need to have a key value store configured and setup.&lt;/p&gt;
 
@@ -114,14 +114,12 @@ cf03ee007fb4        host                host
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Lets create an overlay network&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;Lets create an overlay network&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;docker network create --driver overlay --subnet=10.0.4.0/24 my-net
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Inspect the running network&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Inspect the running network&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;docker network ls

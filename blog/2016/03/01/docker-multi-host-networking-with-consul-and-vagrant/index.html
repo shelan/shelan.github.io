@@ -70,7 +70,7 @@ cf03ee007fb4        host                host
 
 <p>You can refer <a href="https://docs.docker.com/engine/userguide/networking/dockernetworks/">docker networking</a> for a comprehensive guide to understand docker default networking.</p>
 
-<h3 id="docker-multi-host-networking:eca2e7279b291b619d04c388f37a8c56">Docker Multi Host Networking</h3>
+<h3 id="docker-multi-host-networking">Docker Multi Host Networking</h3>
 
 <p>Lets look at what docker proposes for multi-host networking. There are several ways to achieve the docker multi-host networking. In addition to basic network bridge, host and null you can use docker&rsquo;s overlay network to connect multiple hosts. In order to create an overlay network you need to have a key value store configured and setup.</p>
 
@@ -152,14 +152,12 @@ cf03ee007fb4        host                host
 </code></pre>
 
 <ul>
-<li>Lets create an overlay network</li>
-</ul>
+<li><p>Lets create an overlay network</p>
 
 <pre><code>docker network create --driver overlay --subnet=10.0.4.0/24 my-net
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Inspect the running network</li>
+<li><p>Inspect the running network</p></li>
 </ul>
 
 <pre><code>docker network ls
