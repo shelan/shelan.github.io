@@ -2,114 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69e8d27e-685c-4cb5-8ff6-9d58e9a972e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/index.md" afterPath="$PROJECT_DIR$/_includes/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2011/12/01/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2011/12/01/hello-world/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2011/12/04/tweaks-for-your-thinkpad-with-linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2011/12/04/tweaks-for-your-thinkpad-with-linux/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2011/12/23/better-testing-with-testng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2011/12/23/better-testing-with-testng/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/01/14/how-to-add-findbugs-and-checkstyle-plugins-to-your-maven3-build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/01/14/how-to-add-findbugs-and-checkstyle-plugins-to-your-maven3-build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/02/19/how-to-kill-a-process-running-on-a-known-port/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/02/19/how-to-kill-a-process-running-on-a-known-port/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/02/24/big-data--a-quick-introduction/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/02/24/big-data--a-quick-introduction/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/03/01/adding-jms-transport-for-wso2-data-services-server/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/03/01/adding-jms-transport-for-wso2-data-services-server/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/03/05/how-to-call-mysql-stored-procedures-from-wso2-data-services-server/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/03/05/how-to-call-mysql-stored-procedures-from-wso2-data-services-server/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/03/11/how-to-change-default-temporary-folder-in-wso2-carbon-based-products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/03/11/how-to-change-default-temporary-folder-in-wso2-carbon-based-products/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/05/12/cassandra-explorer---gui-for-cassandra/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/05/12/cassandra-explorer---gui-for-cassandra/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/06/18/cassandra-gui-2.0---making-things-a-little-bit-easier/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/06/18/cassandra-gui-2.0---making-things-a-little-bit-easier/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/07/12/how-to-create-a-data-service-from-google-spread-sheet/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/07/12/how-to-create-a-data-service-from-google-spread-sheet/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2012/09/15/create-a-proxy-in-wso2-esb-using-admin-services./index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2012/09/15/create-a-proxy-in-wso2-esb-using-admin-services./index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2013/02/03/application-governance-with-wso2-greg-and-jenkins/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2013/02/03/application-governance-with-wso2-greg-and-jenkins/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2013/02/16/make-a-torrent-downloader-with-raspberry-pi-in-3-steps-/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2013/02/16/make-a-torrent-downloader-with-raspberry-pi-in-3-steps-/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2013/03/26/how-to-send-cdata-inside-your-soap-message-payload/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2013/03/26/how-to-send-cdata-inside-your-soap-message-payload/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2013/04/22/how-to-disable-automatic-service-creation-with-wsdl-upload/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2013/04/22/how-to-disable-automatic-service-creation-with-wsdl-upload/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2013/07/18/how-to-get-a-user-profile-for-oauth-token-using-jwt-headers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2013/07/18/how-to-get-a-user-profile-for-oauth-token-using-jwt-headers/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/04/08/error-recovery-mechanisms-in-wso2-esb-with-store-and-forward/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/04/08/error-recovery-mechanisms-in-wso2-esb-with-store-and-forward/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/09/17/cabo-da-roca---western-most-cape-of-europe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/09/17/cabo-da-roca---western-most-cape-of-europe/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/09/17/new-window-just-opened-.../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/09/17/new-window-just-opened-.../index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/09/19/want-to-learn-anything-faster-/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/09/19/want-to-learn-anything-faster-/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/10/03/castle-of-the-moorscastelo-dos-mouros---hill-top-medieval-castle/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/10/03/castle-of-the-moorscastelo-dos-mouros---hill-top-medieval-castle/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/10/11/how-to-install-hadoop-standalone-/-pseudo-distributed-mode-2.x.x-on-mac-with-os-x-mavericks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/10/11/how-to-install-hadoop-standalone-/-pseudo-distributed-mode-2.x.x-on-mac-with-os-x-mavericks/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/10/25/how-to-correct-error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-/tmp/mysql.sock-on-mac-os-x/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/10/25/how-to-correct-error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-/tmp/mysql.sock-on-mac-os-x/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/11/09/how-to-remote-debug-standalone-hadoop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/11/09/how-to-remote-debug-standalone-hadoop/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2014/11/11/handy-mac-osx-shortcuts-to-work-with-terminal/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2014/11/11/handy-mac-osx-shortcuts-to-work-with-terminal/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/01/29/learning-math-and-science---genius-mind/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/01/29/learning-math-and-science---genius-mind/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/02/02/do-we-need-to-master-memory-in-googles-era-/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/02/02/do-we-need-to-master-memory-in-googles-era-/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/02/03/perfect-memory..-a-skill-developed-or-a-gifted-super-natural-/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/02/03/perfect-memory..-a-skill-developed-or-a-gifted-super-natural-/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/02/17/how-to-use-python-boto-framework-to-connect-to-amazon-ec2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/02/17/how-to-use-python-boto-framework-to-connect-to-amazon-ec2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/02/25/when-should-you-give-up-/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/02/25/when-should-you-give-up-/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/03/20/what-should-you-do-when-your-mobile-phone-is-lost/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/03/20/what-should-you-do-when-your-mobile-phone-is-lost/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/03/29/how-to-build-open-jdk-9-on-mac-osx-yosemite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/03/29/how-to-build-open-jdk-9-on-mac-osx-yosemite/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/03/30/how-does-the--confidence-look-like/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/03/30/how-does-the--confidence-look-like/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/04/02/what-you-should-know-if-you-travel-in-paris/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/04/02/what-you-should-know-if-you-travel-in-paris/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/04/09/how-to-make-your-presentation-effective---10/20/30-rule/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/04/09/how-to-make-your-presentation-effective---10/20/30-rule/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/10/07/moved-to-hugo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/10/07/moved-to-hugo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2015/12/15/configuring-i2-amazon-instances-for-ssds/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2015/12/15/configuring-i2-amazon-instances-for-ssds/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2016/01/27/best-sublime-shortcuts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2016/01/27/best-sublime-shortcuts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2016/01/31/reproducible-experiment-to-compare-apache-spark-and-apache-flink-batch-processing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2016/01/31/reproducible-experiment-to-compare-apache-spark-and-apache-flink-batch-processing/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2016/02/17/i-see-something-in-you/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2016/02/17/i-see-something-in-you/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2016/03/01/docker-multi-host-networking-with-consul-and-vagrant/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2016/03/01/docker-multi-host-networking-with-consul-and-vagrant/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/2016/03/01/docker-multi-host-networking-with-vagrant/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/2016/03/01/docker-multi-host-networking-with-vagrant/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-spark-batch-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flink-spark-batch-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/life/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/life/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/4/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/6/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/6/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tech/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tech/index.html" afterDir="false" />
     </list>
-    <ignored path="shelan.github.io.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="shelan.github.io" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="404.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/404.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solo.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/solo.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2385">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_config.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="150">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/head.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_includes/index.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2354788" vertical-offset="0" max-vertical-offset="637">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -140,18 +100,7 @@
     <option name="width" value="1440" />
     <option name="height" value="810" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <OptionsSetting value="true" id="Undo Check Out" />
-    <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectId" id="1oSWDiyEIYXwaNdGmguV6siCjne" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -192,71 +141,72 @@
       <pane id="PackagesPane" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="SearchEverywhereHistoryKey" value="solo&#9;FILE&#9;file:///Users/shelan/github/shelan.github.io/css/solo.css" />
-    <property name="FullScreen" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -270,27 +220,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -328,27 +257,6 @@
       <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
       <option name="BCName" value="" />
       <option name="launcherParameters">
@@ -363,67 +271,76 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <list size="0" />
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="grailsApplicationRoot" value="" />
+      <setting name="launchBrowser" value="false" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -431,22 +348,38 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="69e8d27e-685c-4cb5-8ff6-9d58e9a972e8" name="Default" comment="" />
       <created>1412207835833</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1412207835833</updated>
       <workItem from="1412207839736" duration="71000" />
       <workItem from="1412207990657" duration="56000" />
       <workItem from="1412208060545" duration="407000" />
       <workItem from="1412208826385" duration="2191000" />
       <workItem from="1412313754096" duration="882000" />
+      <workItem from="1613280356399" duration="958000" />
     </task>
     <task id="LOCAL-00001" summary="Correcting link">
       <created>1412208940614</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
       <updated>1412208940614</updated>
     </task>
     <task id="LOCAL-00002" summary="Correcting link">
       <created>1412210642962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
       <updated>1412210642962</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="switch to https">
+      <created>1613284311995</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613284311995</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -486,6 +419,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -494,18 +430,10 @@
       <collection />
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
     <MESSAGE value="Correcting link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correcting link" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <MESSAGE value="switch to https" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch to https" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/404.html">
@@ -714,4 +642,3 @@
     </entry>
   </component>
 </project>
-
